@@ -33,7 +33,7 @@ require "byebug"
 # end
 
 class PolyTreeNode
-    include Searchable
+    # include Searchable
 
     attr_reader :parent, :value, :children
     
