@@ -1,4 +1,4 @@
-require_relative '00_tree_node'
+require_relative '../../PolyTreeNode/solution/lib/00_tree_node.rb'
 
 class KnightPathFinder
   attr_reader :start_pos
