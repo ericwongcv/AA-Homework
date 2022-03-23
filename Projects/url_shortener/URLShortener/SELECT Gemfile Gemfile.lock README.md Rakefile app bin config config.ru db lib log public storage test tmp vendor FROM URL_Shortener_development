@@ -1,0 +1,21 @@
+                                          List of databases
+               Name                |  Owner   | Encoding | Collate |  Ctype  |   Access privileges   
+-----------------------------------+----------+----------+---------+---------+-----------------------
+ DoggyDayCare_development          | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ DoggyDayCare_test                 | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ URLShortener_development          | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ URLShortener_test                 | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ bank                              | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ eric                              | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ housing_rails_project_development | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ housing_rails_project_test        | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ my_first_db                       | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ postgres                          | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ project_name_development          | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ sqlzoo                            | eric     | UTF8     | C.UTF-8 | C.UTF-8 | 
+ template0                         | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                                   |          |          |         |         | postgres=CTc/postgres
+ template1                         | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                                   |          |          |         |         | postgres=CTc/postgres
+(14 rows)
+
