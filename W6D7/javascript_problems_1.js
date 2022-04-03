@@ -51,12 +51,14 @@ function madLib(arg1, arg2, arg3) {
 // madLib('make', 'best', 'guac');
 
 const isSubstring = (searchString, subString) => {
-    return searchString.includes(subString) ? true : false
+    return searchString.includes(subString);
 }
 
 // console.log(isSubstring("time to program", "time"));
 // console.log(isSubstring("Jump for joy", "joys"));
 
+
+//could have used XOR operator
 function fizzBuzz(array) {
     return array.filter(num => (num % 3 === 0 || num % 5 === 0) && !(num % 3 === 0 && num % 5 === 0));
 }
@@ -66,8 +68,6 @@ function fizzBuzz(array) {
 function isPrime(number) {
     if(number <= 1){
         return false;
-    } else if(number === 2) {
-        return true;
     }
     for(let i = 2; i < number; i++) {
         if(number % i === 0) {
