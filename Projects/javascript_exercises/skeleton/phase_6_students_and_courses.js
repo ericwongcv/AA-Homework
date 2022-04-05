@@ -1,0 +1,71 @@
+function Student(first, last) {
+    this.first = first;
+    this.last = last;
+    this.courses = [];
+}
+
+Student.prototype.name = function() {
+    return this.first + " " + this.last;
+};
+
+Student.prototype.enroll = function(course) {
+    if (!this.courses.includes(course)) {
+        this.courses.forEach( otherCourse => {
+            if (course.conflictsWith(otherCourse)) { 
+                throw 'course conflict';
+            }
+        })
+        return this.courses.push(course);
+    } else {
+        throw 'already enrolled in course';
+    }
+};
+
+Student.prototype.courseLoad = function() {
+    const courseLoad = {};
+
+    this.courses.forEach( course => {
+        let dpt = course.department;
+
+        courseLoad[dpt] = course.credits;
+    })
+    return courseLoad;    
+};
+
+function Course(name, department, credits, days, block) {
+    this.name = name;
+    this.department = department;
+    this.credits = credits;
+    this.days = days;
+    this.block = block;
+    this.students = [];   
+};
+
+Course.prototype.addStudent = function(student) {
+    if (!this.students.includes(student)) {
+        this.students.push(student);
+        student.enroll(this);
+    }
+};
+
+Course.prototype.conflictsWith = function(otherCourse) {
+    if (this.block !== otherCourse.block) { return false }
+
+    return this.days.some(day => otherCourse.days.indexOf(day) !== -1);
+};
+
+
+let student1 = new Student("Nigel", "Leffler");
+let course1 = new Course("101", "CS", 3, ["mon", "wed", "fri"], 1);
+let course2 = new Course("201", "CS", 3, ["wed"], 1);
+let course3 = new Course("301", "ENG", 3, ["tue"], 1);
+let course4 = new Course("401", "BIO", 3, ["mon", "wed", "fri"], 2);
+console.log(student1.name());
+student1.enroll(course1);
+student1.enroll(course3);
+student1.enroll(course2);
+console.log(student1.courseLoad());
+console.log('should be true = ' + course1.conflictsWith(course2));
+console.log('should be false = ' + course1.conflictsWith(course3));
+console.log('should be false = ' + course1.conflictsWith(course4));
+
